@@ -14,6 +14,8 @@ function extractJSON(str, levels = 4) {
   if (matches) {
     matches = matches.map((match) => {
       try {
+        //sanatize "relaxed" JSON without quotes
+        match = match.replace(/(['"])?([a-z0-9A-Z_]+)(['"])?:/g, '"$2": ');
         return JSON.parse(match);
       } catch (error) {
         return null;
