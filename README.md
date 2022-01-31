@@ -1,26 +1,26 @@
 # JS_extractJSON
+
 A Javascript-Module for extracting JSONs from a String.
 
-## Usage
-  ```
-  const extractJSON = require("extractjson");
+## Installation
 
-  const str = `my string that has a json-object like this: {"parameter": "value"}, and also one with several layers: {"parameter": {"parameter2":"value"}}`;
-  console.log(extractJSON(str));
-  ```
- returns: ```[
-    {
-        "parameter": "value"
-    },
-    {
-        "parameter": {
-            "parameter2": "value"
-        }
-    }
-]```
+`npm i @markusederl/extractjson`
+
+## Usage
+
+```
+const extractJSON = require('@markusederl/extractjson');
+
+const str = `my string that has a json-object like this: {"parameter": "value"}, and also one with several layers: {"parameter": {"parameter2":"value"}}`;
+console.log(extractJSON(str));
+```
+
+returns: `[ { "parameter": "value" }, { "parameter": { "parameter2": "value" } } ]`
 
 ## Parameter
-```extractJSON(string, levels)```</br>
+
+`extractJSON(string, levels)`</br>
+
 <table>
   <tr>
     <th>ParameterName</th>
