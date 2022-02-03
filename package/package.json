@@ -1,6 +1,6 @@
 {
-  "name": "extractjson",
-  "version": "1.0.0",
+  "name": "@ederlmarkus/extractjson",
+  "version": "1.0.1",
   "description": "extracts json from string",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/EderlMarkus/JS_extractJSON)"
+    "url": "git+https://github.com/EderlMarkus/JS_extractJSON"
   },
   "keywords": [
     "json",
     "string",
-    "extract"
+    "extract",
+    "parse",
+    "filter"
   ],
   "author": "Markus Ederl",
   "license": "ISC"

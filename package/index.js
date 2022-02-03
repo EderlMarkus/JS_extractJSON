@@ -5,17 +5,17 @@
  * @returns {array} array of jsons found in string
  */
 function extractJSON(str, levels = 4) {
-  let reg = "{(?:[^{}]|({(?:[^{}]|())*}))*}";
+  let reg = '{(?:[^{}]|({(?:[^{}]|())*}))*}';
   for (let index = 1; index < levels; index++) {
-    reg = reg.replace("()", "{(?:[^{}]|())*}");
+    reg = reg.replace('()', '{(?:[^{}]|())*}');
   }
-  reg = new RegExp(reg, "g");
+  reg = new RegExp(reg, 'g');
   let matches = str.match(reg);
   if (matches) {
     matches = matches.map((match) => {
       try {
         //sanatize whitespaces
-        match = match.replace(/(?<={|,)([\s]+)(?=(.*?)(:))/g,"");
+        match = match.replace(/(?<={|,)([\s]+)(?=(.*?)(:))/g, '');
         //sanatize "relaxed" JSON without quotes
         match = match.replace(
           /(?<=([{,])(|\s))(['"])?([a-z0-9A-Z_]+)(['"])?:/g,
